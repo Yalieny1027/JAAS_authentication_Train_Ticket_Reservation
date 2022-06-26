@@ -1,0 +1,49 @@
+<?xml version="1.0"?>  
+<database>
+    <file>
+        <path>D:\\Web_Train\\files\\Train dataset.txt</path>
+    </file>
+    <file>
+        <path>D:\\Web_Train\\files\\user det.txt</path>
+    </file>
+    <file>
+        <path>D:\\Web_Train\\files\\admin.txt</path>
+    </file>
+    <file>
+        <path>D:\\Web_Train\\files\\Ticket dataset.txt</path>
+    </file>
+    <file>
+        <path>D:\\Web_Train\\files\\Logindet.txt</path>
+    </file>
+    <elas>
+        <con>localhost</con>
+        <con>9200</con>
+        <con>9201</con>
+        <con>http</con>
+    </elas>
+    <elas>
+        <index>admindata</index>
+        <type>admin</type>
+    </elas>
+    <elas>
+        <index>userdata</index>
+        <type>user</type>
+    </elas>
+    <elas>
+        <index>traindata</index>
+        <type>train</type>
+    </elas>
+    <elas>
+        <index>allticket</index>
+        <type>tic</type>
+    </elas>
+    <elas>
+        <index>logindet</index>
+        <type>role</type>
+    </elas>
+    <elas>
+        <type>tick</type>
+    </elas>
+    
+    <selected>
+    	<path>elas</path></selected></database>
