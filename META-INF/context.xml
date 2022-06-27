@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="${catalina.home}/webapps/Web_Train" path="/Web_Train" reloadable="true" >
+<Realm appName="Web_Train" className="org.apache.catalina.realm.JAASRealm" roleClassNames="jaas.ComRole" userClassNames="jaas.ComPrincipal"/>
+</Context>
