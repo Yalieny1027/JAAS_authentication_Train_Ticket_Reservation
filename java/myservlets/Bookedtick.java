@@ -1,0 +1,23 @@
+package myservlets;
+
+import java.io.IOException;
+//import jfiles.Common;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jfiles.Intermediate;
+
+
+public class Bookedtick extends HttpServlet {
+
+	private static final long serialVersionUID = 102831973239L;
+    public void service(HttpServletRequest req, HttpServletResponse resp)
+    throws ServletException, IOException {
+
+        Intermediate intermediate= new Intermediate();
+        intermediate.selected();
+        intermediate.view_alltic();
+    }
+}
