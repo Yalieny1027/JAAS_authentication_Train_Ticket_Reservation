@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+
+
+  <display-name>TrainWebApp</display-name>
+   <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+  <servlet>
+    <servlet-name>adminlogin</servlet-name>
+    <servlet-class>myservlets.Adminlogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminlogin</servlet-name>
+    <url-pattern>/adminlogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>userlogin</servlet-name>
+    <servlet-class>myservlets.Userlogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userlogin</servlet-name>
+    <url-pattern>/userlogin</url-pattern>
+  </servlet-mapping>
+      
+  <servlet>
+    <servlet-name>adminsignup</servlet-name>
+    <servlet-class>myservlets.Adminsignup</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminsignup</servlet-name>
+    <url-pattern>/adminsignup</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>usersignup</servlet-name>
+    <servlet-class>myservlets.Usersignup</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>usersignup</servlet-name>
+    <url-pattern>/usersignup</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addtrain</servlet-name>
+    <servlet-class>myservlets.Addtrain</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addtrain</servlet-name>
+    <url-pattern>/addtrain</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>bookedtick</servlet-name>
+    <servlet-class>myservlets.Bookedtick</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookedtick</servlet-name>
+    <url-pattern>/bookedtick</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>booktic</servlet-name>
+    <servlet-class>myservlets.Booktic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>booktic</servlet-name>
+    <url-pattern>/booktic</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>userdet</servlet-name>
+    <servlet-class>myservlets.Userdet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userdet</servlet-name>
+    <url-pattern>/userdet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>yourtic</servlet-name>
+    <servlet-class>myservlets.Yourtic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>yourtic</servlet-name>
+    <url-pattern>/yourtic</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>adminopt</servlet-name>
+    <servlet-class>myservlets.Adminopt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminopt</servlet-name>
+    <url-pattern>/adminopt</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>useropt</servlet-name>
+    <servlet-class>myservlets.Useropt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>useropt</servlet-name>
+    <url-pattern>/useropt</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>loginservlet</servlet-name>
+    <servlet-class>myservlets.Loginservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginservlet</servlet-name>
+    <url-pattern>/loginservlet</url-pattern>
+  </servlet-mapping>
+
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>admin</web-resource-name>
+        <url-pattern>/Adminopt.jsp</url-pattern>
+        <url-pattern>/Alltickets.jsp</url-pattern>
+        <url-pattern>/Userdetails.jsp</url-pattern>
+        <url-pattern>/Addtrain.jsp</url-pattern>
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>admin</role-name>
+    </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>user</web-resource-name>
+        <url-pattern>/Useropt.jsp</url-pattern>
+		<url-pattern>/Bookticket.jsp</url-pattern>
+		<url-pattern>/Yourtickets.jsp</url-pattern>    
+        <http-method>GET</http-method>
+        <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>user</role-name>
+    </auth-constraint>
+</security-constraint>
+
+<login-config>
+  <auth-method>FORM</auth-method>
+  <form-login-config>
+    <form-login-page>/Adminlogin.jsp</form-login-page>
+    <form-error-page>/Loginerror.jsp</form-error-page>
+  </form-login-config>
+</login-config>
+  <security-role>
+	<role-name>user</role-name>
+  </security-role>	
+   <security-role>
+	<role-name>admin</role-name>
+  </security-role>
+
+</web-app>
